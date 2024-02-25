@@ -27,8 +27,8 @@ class main:
         style = ttk.Style()
         style.theme_use('sun-valley-dark')
         style.configure('TFrame', background = 'black')
-        style.configure('Card.Accent.TButton', font = ('Segoe UI', 50))
-        style.configure('Card.TButton', font = ('Segoe UI', 50))
+        style.configure('Card.Accent.TButton', font = ('Segoe UI', 40))
+        style.configure('Card.TButton', font = ('Segoe UI', 40))
         
         self.add_main_widgets()
         

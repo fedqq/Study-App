@@ -26,6 +26,7 @@ class SubjectWindow:
                 for term in topic.terms:
                     if term.id == id:
                         term.learned = learned
+                        return
         
         def _flaschards(*_):
             TopicSelector(subject, self.window.grab_set, set_learned)
