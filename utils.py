@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
 
-def _dialog(input_name: str, title: str, callback, second_name = None):
+def _dialog(input_name: str, title: str, callback, second_name: str | None = None):
         toplevel = tk.Toplevel(width = 100, height = 100)
         toplevel.grab_set()
         toplevel.wm_attributes('-topmost', True)

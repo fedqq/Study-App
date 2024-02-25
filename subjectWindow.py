@@ -17,7 +17,7 @@ class SubjectWindow:
         self.h = 900
         self.window.configure(background = '#1a1a1a')
         
-        self.update_topic_list()
+        self._update_topic_list()
         
         ttk.Label(self.window, font = ("Segoe UI Black", 60), text = f'Study {subject.name}', background = '#1a1a1a').place(x = self.w/2, y = 70, anchor = tk.CENTER)
         
@@ -28,19 +28,19 @@ class SubjectWindow:
                         term.learned = learned
                         return
         
-        def _flaschards(*_):
+        def flaschards(*_):
             TopicSelector(subject, self.window.grab_set, set_learned)
                     
-        ttk.Button(self.window, text = 'flashcards', command = _flaschards).place(x = 200, y = self.h / 2)
+        ttk.Button(self.window, text = 'flashcards', command = flaschards).place(x = 200, y = self.h / 2)
         
         self.window.mainloop()
         
-    def update_topic_list(self):
+    def _update_topic_list(self) -> None:
         self.topic_var = tk.StringVar()
         self.topic_list = ttk.OptionMenu(self.window, self.topic_var, self.topics[0].name, *[topic.name for topic in self.topics])
         self.topic_list.place(x = 100, y = 100)
     
-    def add_topic(self):
+    def add_topic(self) -> None:
         def create(var: tk.StringVar):
             self.subject.topics.append(Topic(var.get()))
         

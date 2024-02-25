@@ -15,12 +15,14 @@ class TopicSelector:
         
         chosen_topics: list[Topic] = []
         
+        def add_topic(t: Topic, b: ttk.Button):
+            chosen_topics.append(t)
+            b.configure(style = 'TButton')
+        
         for topic in subject.topics:
-            def add(t, b):
-                chosen_topics.append(t)
-                b.configure(style = 'TButton')
+            
             btn = ttk.Button(self.window, text = topic.name, style = 'Accent.TButton')
-            btn.configure(command = lambda t=topic, b=btn: add(t, b))
+            btn.configure(command = lambda t=topic, b=btn: add_topic(t, b))
             btn.pack(padx = 20, pady = 10)
          
         def confirm():

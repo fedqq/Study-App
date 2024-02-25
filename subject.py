@@ -7,5 +7,5 @@ class Subject:
         self.topics: list[Topic] = [Topic('Topic A'), Topic('Topic B')]
         self.done_tests: list[Test] = []
         
-    def add_topic(self, topic):
+    def add_topic(self, topic: Topic):
         self.topics.append(topic)
